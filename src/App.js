@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import "./App.css";
-import Header from "./components/Header"
+import Header from "./components/Header";
 import axios from "axios";
-import Display from './components/Display'
+import Display from "./components/Display";
+import FavoriteList from "./components/FavoriteList";
 
 class App extends Component {
   constructor(props) {
@@ -14,59 +15,54 @@ class App extends Component {
 
   componentDidMount() {
     axios
-    .get('/api/favorite-albums')
-    .then((res) =>{
-      this.setState({favoriteAlbums: res.data });
-    })
-    .catch((err)=> console.log(err));
+      .get("/api/favorite-albums")
+      .then((res) => {
+        this.setState({ favoriteAlbums: res.data });
+      })
+      .catch((err) => console.log(err));
   }
 
   selectFavorite = (album) => {
     axios
-    .post('/api/favorite-albums', {album: album})
-    .then((res)=>{
-      this.setState({favoriteAlbums: res.data})
-    })
-    .catch((err)=>console.log(err))
-  }
+      .post("/api/favorite-albums", { album: album })
+      .then((res) => {
+        this.setState({ favoriteAlbums: res.data });
+      })
+      .catch((err) => console.log(err));
+  };
 
-  giveRating =(id, newRating) =>{
-    let body = {rating: newRating}
+  giveRating = (id, newRating) => {
+    let body = { rating: newRating };
     axios
-    .put(`/api/favorite-albums/${id}`, body )
-    .then((res)=>{
-      this.setState({favoriteAlbums: res.data})
-    })
-    .catch((err)=>console.log(err))
-  }
+      .put(`/api/favorite-albums/${id}`, body)
+      .then((res) => {
+        this.setState({ favoriteAlbums: res.data });
+      })
+      .catch((err) => console.log(err));
+  };
 
   deleteAlbum = (id) => {
     axios
-    .delete(`/api/favorite-albums/${id}`)
-    .then((res)=>{
-      this.setState({favoriteAlbums: res.data})
-    })
-    .catch((err)=> console.log(err))
-  }
+      .delete(`/api/favorite-albums/${id}`)
+      .then((res) => {
+        this.setState({ favoriteAlbums: res.data });
+      })
+      .catch((err) => console.log(err));
+  };
   render() {
-    console.log(this.state.favoriteAlbums)
-    const mappedFavorites = this.state.favoriteAlbums.map((album,index)=>{
-      return (
-        <div>
-          <div><img src ={album.artworkUrl100} alt ={album.collectionName}/>
-        <p>{album.collectionName}</p> 
-          {album.rating}</div>
-         
+    console.log(this.state.favoriteAlbums);
+    return (
+      <div>
+        <Header />
+        <div className="App">
+          <Display selectFavorite={this.selectFavorite} />
+          <FavoriteList
+            favoriteAlbums={this.state.favoriteAlbums}
+            deleteAlbum={this.deleteAlbum}
+          />
         </div>
-      )
-    }
-    )
-    return <div className="App">
-      <Header/>
-      <Display selectFavorite = {this.selectFavorite}/>
-      <h1>Favorites</h1>
-      <div onClick={this.deleteAlbum}>{mappedFavorites}</div>
-    </div>;
+      </div>
+    );
   }
 }
 

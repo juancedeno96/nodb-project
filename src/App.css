@@ -2,10 +2,27 @@
   text-align: center;
 }
 
-.albums{
+.albums {
   display: flex;
   justify-content: space-evenly;
-  width: 80vw;
-  height: 50vh;
+  width: 100vw;
+  height: 60vh;
   flex-wrap: wrap;
+  background: url("https://images.pexels.com/photos/132197/pexels-photo-132197.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+  background-size: cover;
+}
+
+.favorites {
+  display: flex;
+  justify-content: space-around;
+  height: 40vh;
+  width: 100vw;
+  background-color: rebeccapurple;
+}
+
+.singleAlbum {
+  width: 180px;
+  height: 150px;
+  position: relative;
+  top: 40px;
 }
