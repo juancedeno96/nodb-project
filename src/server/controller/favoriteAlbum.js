@@ -7,10 +7,10 @@ module.exports = {
     },
 
     selectFavorite: (req, res) => {
-        const {albums} = req.body;
-        albums.id = id;
+        const {album} = req.body;
+        album.id = id;
         id++;
-        favoriteAlbums.push(albums)
+        favoriteAlbums.push(album)
         res.status(200).send(favoriteAlbums)
     },
 
