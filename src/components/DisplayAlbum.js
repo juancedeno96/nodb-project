@@ -17,7 +17,9 @@ class DisplayAlbum extends Component {
           src={this.props.album.artworkUrl100}
           alt={this.props.album.collectionName}
         />
-        <p>{this.props.album.collectionName}</p>
+        <p>{this.props.album.collectionName}
+        <br/>{this.props.album.releaseDate}</p>
+        
       </div>
     );
   }

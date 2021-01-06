@@ -57,6 +57,7 @@ class App extends Component {
         <div className="App">
           <Display selectFavorite={this.selectFavorite} />
           <FavoriteList
+            giveRating={this.giveRating}
             favoriteAlbums={this.state.favoriteAlbums}
             deleteAlbum={this.deleteAlbum}
           />

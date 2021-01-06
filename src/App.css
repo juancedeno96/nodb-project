@@ -15,6 +15,7 @@
 .favorites {
   display: flex;
   justify-content: space-around;
+  align-items: flex-start;
   height: 40vh;
   width: 100vw;
   background-color: rebeccapurple;
@@ -23,6 +24,11 @@
 .singleAlbum {
   width: 180px;
   height: 150px;
+  position: relative;
+  top: 40px;
+}
+
+.singleFav{
   position: relative;
   top: 40px;
 }
