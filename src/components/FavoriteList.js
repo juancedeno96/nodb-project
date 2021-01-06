@@ -37,7 +37,8 @@ class FavoriteList extends Component {
         </div>
       );
     });
-    return <div className="favorites">{mappedAlbums}</div>;
+    return <section className="favorites"><h2 className="favtitle">Favorites</h2>
+      {mappedAlbums}</section>;
   }
 }
 export default FavoriteList;

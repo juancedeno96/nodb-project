@@ -31,7 +31,7 @@ class Display extends Component {
         selectFavorite={this.props.selectFavorite}
       />
     ));
-    return <div className="albums">{mappedAlbums}</div>;
+    return <section className="albums">{mappedAlbums}</section>;
   }
 }
 

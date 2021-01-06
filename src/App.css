@@ -1,14 +1,21 @@
 .App {
   text-align: center;
 }
-
+.Header{
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 8vh;
+  align-items: center;
+  background:url('https://img.freepik.com/free-vector/brush-strokes-background_53876-89327.jpg?size=626&ext=jpg&ga=GA1.2.1503416500.1609286400');
+}
 .albums {
   display: flex;
   justify-content: space-evenly;
   width: 100vw;
   height: 60vh;
   flex-wrap: wrap;
-  background: url("https://images.pexels.com/photos/132197/pexels-photo-132197.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+  background: url('https://venngage-wordpress.s3.amazonaws.com/uploads/2018/09/Colorful-Geometric-Simple-Background-Image.jpg');
   background-size: cover;
 }
 
@@ -18,7 +25,8 @@
   align-items: flex-start;
   height: 40vh;
   width: 100vw;
-  background-color: rebeccapurple;
+  background: url('https://img.freepik.com/free-vector/brush-strokes-background_53876-89327.jpg?size=626&ext=jpg&ga=GA1.2.1503416500.1609286400');
+  background-size: cover;
 }
 
 .singleAlbum {
@@ -30,5 +38,9 @@
 
 .singleFav{
   position: relative;
-  top: 40px;
+  top: 80px;
+}
+
+.favtitle{
+  position: absolute;
 }

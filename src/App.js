@@ -53,8 +53,9 @@ class App extends Component {
     console.log(this.state.favoriteAlbums);
     return (
       <div>
-        <Header />
+        
         <div className="App">
+        <Header />
           <Display selectFavorite={this.selectFavorite} />
           <FavoriteList
             giveRating={this.giveRating}
